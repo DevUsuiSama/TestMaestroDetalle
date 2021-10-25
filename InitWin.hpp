@@ -12,11 +12,13 @@ class MaestroDetalle : public Gtk::Application
 {
 private:
     Gtk::Window *win;
+    Glib::RefPtr<Gtk::Builder> build;
 
 public:
     MaestroDetalle();
     void init();
     Gtk::Window* get_window();
+    Glib::RefPtr<Gtk::Builder> get_build();
 };
 
 #endif // !__INITWIN_HPP__
