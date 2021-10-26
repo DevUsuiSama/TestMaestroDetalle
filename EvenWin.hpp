@@ -17,13 +17,16 @@ class EvenWin : public Gtk::ApplicationWindow
 {
 private:
     Gtk::Window *win;
-    Gtk::Button *btnAgregar;
+    Gtk::Button *btnAgregar, *btnEditar, *btnEliminar, *btnImprimir;
     Glib::RefPtr<Gtk::Builder> build;
 
 public:
     EvenWin(Gtk::Window *win, Glib::RefPtr<Gtk::Builder> build);
     void on_create();
     void on_btnAgregar();
+    void on_btnEditar();
+    void on_btnEliminar();
+    void on_btnImprimir();
     Gtk::Window *get_window();
 };
 
