@@ -11,6 +11,7 @@
                 "/home/suijofrss/Escritorio/AppSystem/App C++/IngSof Maestro-Detalle/InitWin.cxx",
                 "/home/suijofrss/Escritorio/AppSystem/App C++/IngSof Maestro-Detalle/InitWin.hpp",
                 "/home/suijofrss/Escritorio/AppSystem/App C++/IngSof Maestro-Detalle/EvenWin.hpp",
+                "/home/suijofrss/Escritorio/AppSystem/App C++/IngSof Maestro-Detalle/EvenWin.cxx",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "`pkg-config gtkmm-3.0 --cflags --libs`"

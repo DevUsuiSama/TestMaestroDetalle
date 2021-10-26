@@ -9,7 +9,7 @@ MaestroDetalle::MaestroDetalle() {}
 
 void MaestroDetalle::init()
 {
-    build = Gtk::Builder::create_from_file("Maestro-Detalle.glade");
+    build = Gtk::Builder::create_from_file("MaestroDetalle.glade");
     build->get_widget<Gtk::Window>("wMaestroDetalle", win);
     add_window(*win);
 }
