@@ -6,16 +6,22 @@
     <columns>
       <!-- column-name ID -->
       <column type="gint"/>
-      <!-- column-name Descripcion -->
+      <!-- column-name Fecha -->
       <column type="gchararray"/>
-      <!-- column-name gfloat1 -->
+      <!-- column-name idArticulo -->
+      <column type="gint"/>
+      <!-- column-name Cantidad -->
+      <column type="gint"/>
+      <!-- column-name Precio -->
       <column type="gfloat"/>
     </columns>
     <data>
       <row>
         <col id="0">0</col>
         <col id="1" translatable="yes">Hot Wheel</col>
-        <col id="2">15000</col>
+        <col id="2">0</col>
+        <col id="3">0</col>
+        <col id="4">0</col>
       </row>
     </data>
   </object>
@@ -65,6 +71,47 @@
                 <property name="position">1</property>
               </packing>
             </child>
+            <child>
+              <object class="GtkButton" id="btnBuscar1">
+                <property name="label">gtk-find</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="use-stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lbFecha">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Fecha</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="tbFecha">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="max-length">10</property>
+                <property name="shadow-type">none</property>
+                <property name="primary-icon-stock">gtk-go-forward</property>
+                <property name="placeholder-text" translatable="yes">Ingresar Fecha</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -107,6 +154,20 @@
               </packing>
             </child>
             <child>
+              <object class="GtkButton" id="btnBuscar">
+                <property name="label">gtk-find</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="use-stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkLabel" id="lbCantidad">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
@@ -115,7 +176,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">2</property>
+                <property name="position">3</property>
               </packing>
             </child>
             <child>
@@ -131,45 +192,58 @@
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="lbFecha">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Fecha</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
                 <property name="position">4</property>
               </packing>
             </child>
             <child>
-              <object class="GtkEntry" id="tbFecha">
+              <object class="GtkLabel" id="lbPrecio">
                 <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="max-length">10</property>
-                <property name="shadow-type">none</property>
-                <property name="primary-icon-stock">gtk-go-forward</property>
-                <property name="placeholder-text" translatable="yes">Ingresar Fecha</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Precio</property>
               </object>
               <packing>
-                <property name="expand">True</property>
+                <property name="expand">False</property>
                 <property name="fill">True</property>
                 <property name="position">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="primary-icon-stock">gtk-go-forward</property>
+                <property name="placeholder-text" translatable="yes">Ingresar un Precio</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">6</property>
               </packing>
             </child>
           </object>
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
+            <property name="padding">10</property>
             <property name="position">1</property>
           </packing>
         </child>
         <child>
-          <object class="GtkTreeView" id="treeArticulo">
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Maestro-Compra</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">5</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkTreeView" id="treeCompra">
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="model">liststore1</property>
@@ -178,30 +252,38 @@
             </child>
             <child>
               <object class="GtkTreeViewColumn">
-                <property name="resizable">True</property>
+                <property name="title" translatable="yes">ID Compra</property>
+                <property name="clickable">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkTreeViewColumn">
+                <property name="title" translatable="yes">Fecha</property>
+                <property name="clickable">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkTreeViewColumn">
                 <property name="title" translatable="yes">ID Articulo</property>
                 <property name="clickable">True</property>
               </object>
             </child>
             <child>
               <object class="GtkTreeViewColumn">
-                <property name="resizable">True</property>
-                <property name="title" translatable="yes">Descripcion</property>
+                <property name="title" translatable="yes">Cantidad</property>
                 <property name="clickable">True</property>
               </object>
             </child>
             <child>
               <object class="GtkTreeViewColumn">
                 <property name="title" translatable="yes">Precio</property>
-                <property name="clickable">True</property>
               </object>
             </child>
           </object>
           <packing>
             <property name="expand">True</property>
             <property name="fill">True</property>
-            <property name="padding">5</property>
-            <property name="position">2</property>
+            <property name="position">4</property>
           </packing>
         </child>
         <child>
@@ -241,7 +323,7 @@
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="padding">5</property>
-            <property name="position">3</property>
+            <property name="position">7</property>
           </packing>
         </child>
         <child>
@@ -251,10 +333,11 @@
             <property name="halign">end</property>
             <child>
               <object class="GtkButton" id="btnImprimir">
-                <property name="label" translatable="yes">Imprimir</property>
+                <property name="label">gtk-print</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="use-stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -264,10 +347,11 @@
             </child>
             <child>
               <object class="GtkButton" id="btnEliminar">
-                <property name="label" translatable="yes">Eliminar</property>
+                <property name="label">gtk-delete</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="use-stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -277,10 +361,11 @@
             </child>
             <child>
               <object class="GtkButton" id="btnEditar">
-                <property name="label" translatable="yes">Editar</property>
+                <property name="label">gtk-edit</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="use-stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -290,10 +375,11 @@
             </child>
             <child>
               <object class="GtkButton" id="btnAgregar">
-                <property name="label" translatable="yes">Agregar</property>
+                <property name="label">gtk-save</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="use-stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -306,7 +392,7 @@
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="padding">3</property>
-            <property name="position">4</property>
+            <property name="position">8</property>
           </packing>
         </child>
       </object>

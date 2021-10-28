@@ -32,7 +32,7 @@ void EvenWin::on_btnAgregar()
     {
         Gtk::MessageDialog dialog(*win, "D1", true, Gtk::MESSAGE_INFO, Gtk::BUTTONS_OK);
         dialog.set_title("Maestro/Detalle");
-        dialog.set_message("Datos Agregados");
+        dialog.set_message("Rellene todos los campos");
         dialog.set_secondary_text("by UsuiSama 2021");
         dialog.run();
     }
@@ -43,7 +43,7 @@ void EvenWin::on_btnEditar()
     {
         Gtk::MessageDialog dialog(*win, "D2", true, Gtk::MESSAGE_INFO, Gtk::BUTTONS_OK);
         dialog.set_title("Maestro/Detalle");
-        dialog.set_message("Datos Editado");
+        dialog.set_message("Seleccione una fila a editar");
         dialog.set_secondary_text("by UsuiSama 2021");
         dialog.run();
     }
@@ -54,7 +54,7 @@ void EvenWin::on_btnEliminar()
     {
         Gtk::MessageDialog dialog(*win, "D3", true, Gtk::MESSAGE_INFO, Gtk::BUTTONS_OK);
         dialog.set_title("Maestro/Detalle");
-        dialog.set_message("Datos Eliminado Permanentemente");
+        dialog.set_message("Seleccione una fila a eliminar");
         dialog.set_secondary_text("by UsuiSama 2021");
         dialog.run();
     }
